@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0d0f14;
+    font-family: 'DM Sans', sans-serif;
+    color: #fff;
+    min-height: 100vh;
+    padding: 48px 48px 64px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f59e0b;
+    background: rgba(245,158,11,0.1);
+    border: 1px solid rgba(245,158,11,0.25);
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  h1 span { color: #f59e0b; }
+
+  .subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, rgba(245,158,11,0.3), transparent);
+    margin-bottom: 44px;
+  }
+
+  .flow { display: flex; flex-direction: column; }
+
+  .step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .step-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-num {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .line {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(245,158,11,0.25), transparent);
+    margin: 6px 0;
+  }
+
+  .step:last-child .line { display: none; }
+
+  .step-body { padding-bottom: 40px; }
+
+  .step-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  .step-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .step-desc {
+    font-size: 13.5px;
+    color: #9ca3af;
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 500px;
+  }
+
+  .step-desc strong { color: #d1d5db; font-weight: 500; }
+
+  .tools-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .chip {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #6b7280;
+  }
+
+  .risk {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #ef4444;
+    background: rgba(239,68,68,0.07);
+    border: 1px solid rgba(239,68,68,0.18);
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  /* Step colors */
+  .c-amber .step-num { background: rgba(245,158,11,0.12); color: #f59e0b; border: 1.5px solid rgba(245,158,11,0.25); }
+  .c-amber .step-label { color: #f59e0b; }
+  .c-indigo .step-num { background: rgba(99,102,241,0.12); color: #818cf8; border: 1.5px solid rgba(99,102,241,0.25); }
+  .c-indigo .step-label { color: #818cf8; }
+  .c-emerald .step-num { background: rgba(16,185,129,0.12); color: #34d399; border: 1.5px solid rgba(16,185,129,0.25); }
+  .c-emerald .step-label { color: #34d399; }
+  .c-pink .step-num { background: rgba(236,72,153,0.12); color: #f472b6; border: 1.5px solid rgba(236,72,153,0.25); }
+  .c-pink .step-label { color: #f472b6; }
+  .c-sky .step-num { background: rgba(14,165,233,0.12); color: #38bdf8; border: 1.5px solid rgba(14,165,233,0.25); }
+  .c-sky .step-label { color: #38bdf8; }
+  .c-green .step-num { background: rgba(34,197,94,0.12); color: #4ade80; border: 1.5px solid rgba(34,197,94,0.25); }
+  .c-green .step-label { color: #4ade80; }
+
+  .footer {
+    margin-top: 4px;
+    padding: 18px 22px;
+    background: rgba(245,158,11,0.04);
+    border: 1px solid rgba(245,158,11,0.14);
+    border-radius: 12px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .footer-icon { font-size: 18px; margin-top: 1px; flex-shrink: 0; }
+
+  .footer-text {
+    font-size: 12.5px;
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  .footer-text strong { color: #f59e0b; font-weight: 500; }
+
+  .powered {
+    margin-top: 36px;
+    text-align: right;
+    font-size: 11px;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+
+  .powered span { color: #f59e0b; }
+</style>
+</head>
+<body>
+
+<div class="tag">Updaits × NK &amp; Sons Contracting</div>
+<h1>Invoice <span>Automation</span><br>Workflow</h1>
+<p class="subtitle">End-to-end — from email thread to client invoice</p>
+<div class="divider"></div>
+
+<div class="flow">
+
+  <div class="step c-amber">
+    <div class="step-left">
+      <div class="step-num">01</div>
+      <div class="line"></div>
+    </div>
+    <div class="step-body">
+      <div class="step-label">Trigger</div>
+      <div class="step-title">Email Moved to Invoice Folder</div>
+      <div class="step-desc">Constantine moves a relevant project thread into a dedicated <strong>Gmail folder</strong>. This single action kicks off the entire automation — no forms, no buttons, no extra steps.</div>
+      <div class="tools-row">
+        <span class="chip">Gmail</span>
+        <span class="chip">n8n Gmail Node</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step c-indigo">
+    <div class="step-left">
+      <div class="step-num">02</div>
+      <div class="line"></div>
+    </div>
+    <div class="step-body">
+      <div class="step-label">Fetch</div>
+      <div class="step-title">Full Thread Retrieval</div>
+      <div class="step-desc">The automation pulls the <strong>complete email thread</strong> — not just the triggering message. Full context is needed: agreed prices, project scope, and all client back-and-forth.</div>
+      <div class="tools-row">
+        <span class="chip">Gmail API</span>
+        <span class="chip">n8n</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step c-emerald">
+    <div class="step-left">
+      <div class="step-num">03</div>
+      <div class="line"></div>
+    </div>
+    <div class="step-body">
+      <div class="step-label">Extract</div>
+      <div class="step-title">AI Data Extraction</div>
+      <div class="step-desc">The thread is sent to an AI model with a structured prompt. It returns <strong>clean, structured data</strong>: client name, project name, line items, amounts, due date, and any relevant notes.</div>
+      <div class="tools-row">
+        <span class="chip">Claude API</span>
+        <span class="chip">n8n HTTP Node</span>
+      </div>
+      <div><span class="risk">⚠ Key risk — extraction quality depends on email consistency</span></div>
+    </div>
+  </div>
+
+  <div class="step c-pink">
+    <div class="step-left">
+      <div class="step-num">04</div>
+      <div class="line"></div>
+    </div>
+    <div class="step-body">
+      <div class="step-label">Draft</div>
+      <div class="step-title">QuickBooks Invoice Created</div>
+      <div class="step-desc">Extracted data is matched to an existing <strong>QB customer</strong> and a draft invoice is generated automatically. If no matching client is found, the workflow flags it rather than proceeding with bad data.</div>
+      <div class="tools-row">
+        <span class="chip">QuickBooks API</span>
+        <span class="chip">n8n</span>
+      </div>
+      <div><span class="risk">⚠ Key risk — client matching must be accurate</span></div>
+    </div>
+  </div>
+
+  <div class="step c-sky">
+    <div class="step-left">
+      <div class="step-num">05</div>
+      <div class="line"></div>
+    </div>
+    <div class="step-body">
+      <div class="step-label">Approve</div>
+      <div class="step-title">Constantine Reviews &amp; Approves</div>
+      <div class="step-desc">An approval email is sent with a <strong>summary of the drafted invoice</strong> and a direct link to review it in QuickBooks. One reply or click confirms it's ready to send.</div>
+      <div class="tools-row">
+        <span class="chip">Gmail</span>
+        <span class="chip">QuickBooks</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step c-green">
+    <div class="step-left">
+      <div class="step-num">06</div>
+      <div class="line"></div>
+    </div>
+    <div class="step-body">
+      <div class="step-label">Send</div>
+      <div class="step-title">Invoice Delivered to Client</div>
+      <div class="step-desc">On approval, QuickBooks sends the finalized invoice directly to the client. The completed job is <strong>logged automatically</strong> for internal tracking and records.</div>
+      <div class="tools-row">
+        <span class="chip">QuickBooks</span>
+        <span class="chip">Google Sheets</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-icon">💡</div>
+  <div class="footer-text"><strong>Note:</strong> Steps 3 and 4 are where we'll spend the most testing time. The goal is extraction accurate enough that your review is a <strong>30-second confirmation</strong> — not a correction session.</div>
+</div>
+
+<div class="powered">Built by <span>Updaits</span></div>
+
+</body>
+</html>
