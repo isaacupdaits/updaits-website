@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Updaits — Project Intelligence for Construction</title>
+  <link rel="icon" type="image/png" href="data:image/png;base64,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" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    :root {
+      --orange: #E85D26;
+      --orange-dark: #C44A18;
+      --orange-light: #FF7A45;
+      --black: #0A0A0A;
+      --dark: #111111;
+      --dark2: #1A1A1A;
+      --dark3: #242424;
+      --dark4: #2E2E2E;
+      --border: rgba(255,255,255,0.08);
+      --border-med: rgba(255,255,255,0.13);
+      --text: #F2F0EB;
+      --text-muted: #888880;
+      --text-dim: #505050;
+      --radius: 6px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--black);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,10,10,0.88);
+      backdrop-filter: blur(14px);
+    }
+
+    .logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: linear-gradient(90deg, #F2F0EB 0%, #FF7A45 40%, #E85D26 55%, #FF7A45 70%, #F2F0EB 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-icon {
+      width: 36px; height: 36px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    nav a.nav-cta {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--border-med);
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    nav a.nav-cta:hover { border-color: var(--orange); color: var(--orange); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      padding: 8rem 2.5rem 5rem;
+      position: relative;
+      overflow: visible;
+      z-index: 10;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .hero-left { display: flex; flex-direction: column; align-items: flex-start; }
+    .hero-right { display: flex; flex-direction: column; }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -5%; right: -8%;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(232,93,38,0.11) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      border: 1px solid rgba(232,93,38,0.3);
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 2rem;
+      width: fit-content;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--orange);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.7); }
+    }
+
+    h1 {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 800;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      width: 100%;
+      margin: 0 0 1.75rem;
+      color: var(--text);
+    }
+
+    h1 em { font-style: normal; color: var(--orange); }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-muted);
+      font-weight: 400;
+      width: 100%;
+      margin: 0 0 3rem;
+      line-height: 1.75;
+    }
+
+    /* WAITLIST FORM */
+    .waitlist-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 560px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .waitlist-form input,
+    .waitlist-form select {
+      width: 100%;
+      background: var(--dark2);
+      border: 1px solid var(--border-med);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius);
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .waitlist-form input::placeholder { color: var(--text-dim); }
+
+    .waitlist-form input:focus,
+    .waitlist-form select:focus {
+      border-color: var(--orange);
+      background: var(--dark3);
+    }
+
+    .waitlist-form select option { background: var(--dark2); }
+
+    /* CUSTOM MULTI-SELECT DROPDOWN */
+    .sp-dropdown-wrap { position: relative; width: 100%; }
+
+    .sp-trigger {
+      width: 100%;
+      background: var(--dark2);
+      border: 1px solid var(--border-med);
+      color: var(--text-dim);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 0.2s, background 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+
+    .sp-trigger.has-selection { color: var(--text); }
+    .sp-trigger.open { border-color: var(--orange); background: var(--dark3); }
+    .sp-trigger .sp-arrow { font-size: 0.65rem; transition: transform 0.2s; color: var(--text-dim); flex-shrink: 0; margin-left: 8px; }
+    .sp-trigger.open .sp-arrow { transform: rotate(180deg); }
+
+    .sp-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0; right: 0;
+      background: var(--dark2);
+      border: 1px solid var(--border-med);
+      border-radius: var(--radius);
+      overflow: hidden;
+      z-index: 200;
+    }
+
+    .sp-menu.open { display: block; }
+
+    .sp-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.75rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .sp-option:last-child { border-bottom: none; }
+    .sp-option:hover { background: var(--dark3); color: var(--text); }
+    .sp-option.selected { color: var(--orange); background: rgba(232,93,38,0.06); }
+
+    .sp-checkbox {
+      width: 15px; height: 15px;
+      border: 1px solid var(--border-med);
+      border-radius: 3px;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .sp-option.selected .sp-checkbox { border-color: var(--orange); background: var(--orange); color: #fff; }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--orange);
+      color: #fff;
+      font-family: 'Barlow', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .submit-btn:hover { background: var(--orange-light); }
+    .submit-btn:active { transform: scale(0.99); }
+
+    .form-note { font-size: 0.78rem; color: var(--text-dim); text-align: center; }
+
+    .success-msg {
+      display: none;
+      background: rgba(232,93,38,0.07);
+      border: 1px solid rgba(232,93,38,0.25);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .success-msg h3 {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+      color: var(--orange);
+    }
+
+    .success-msg p { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* STATS STRIP */
+    .stats-strip {
+      display: flex;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--dark);
+    }
+
+    .stat {
+      flex: 1;
+      padding: 2rem 2.5rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Barlow', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.03em;
+    }
+
+    .stat-num span { color: var(--orange); }
+    .stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; }
+
+    /* QUOTE */
+    .quote-section {
+      padding: 5rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--dark);
+    }
+
+    .quote-mark {
+      font-family: 'Barlow', sans-serif;
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--orange);
+      line-height: 0.8;
+      margin-bottom: 1.5rem;
+    }
+
+    blockquote {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      color: var(--text);
+      max-width: 700px;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .quote-author { font-size: 0.85rem; color: var(--text-dim); letter-spacing: 0.05em; }
+
+    /* BOTTOM CTA */
+    .bottom-cta {
+      padding: 7rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--black);
+    }
+
+    .bottom-cta::before {
+      content: '';
+      position: absolute;
+      bottom: -20%; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(232,93,38,0.09) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      max-width: 600px;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+
+    h2 em { font-style: normal; color: var(--orange); }
+
+    .bottom-cta h2 { margin: 0 auto 1.5rem; text-align: center; }
+    .bottom-cta p { font-size: 1rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+
+    .cta-btn-large {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-family: 'Barlow', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      padding: 1rem 2.5rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .cta-btn-large:hover { background: var(--orange-light); }
+    .cta-btn-large:active { transform: scale(0.98); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--dark);
+    }
+
+    footer .logo { font-size: 1.5rem; background: linear-gradient(90deg, #F2F0EB 0%, #FF7A45 40%, #E85D26 55%, #FF7A45 70%, #F2F0EB 100%); }
+    footer p { font-size: 0.8rem; color: var(--text-dim); }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .hero { padding: 7rem 1.25rem 4rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .stats-strip { flex-direction: column; }
+      .stat { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat:last-child { border-bottom: none; }
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+      .bottom-cta { padding: 5rem 1.25rem; }
+    }
+
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="logo">Updaits</a>
+    <svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="10,82 28,72 28,56 10,66" fill="#252525"/>
+        <polygon points="28,72 46,62 46,46 28,56" fill="#333333"/>
+        <polygon points="10,66 28,56 46,46 28,36 10,46" fill="#3A3A3A"/>
+        <polygon points="40,82 58,72 58,40 40,50" fill="#333333"/>
+        <polygon points="58,72 76,62 76,30 58,40" fill="#E85D26"/>
+        <polygon points="40,50 58,40 76,30 58,20 40,30" fill="#FF7A45"/>
+        <polygon points="62,82 80,72 80,24 62,34" fill="#252525"/>
+        <polygon points="80,72 98,62 98,14 80,24" fill="#333333"/>
+        <polygon points="62,34 80,24 98,14 80,4 62,14" fill="#444444"/>
+      </svg>
+    <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-tag">Early partner access open</div>
+    <h1>Your best work isn't happening<br><em>behind a desk.</em></h1>
+    <p class="hero-sub">Updaits partners with contracting and service businesses to design, build, and deploy custom AI systems — starting with whatever is slowing you down the most.</p>
+
+    <div class="waitlist-form" id="waitlist">
+      <div class="form-row">
+        <input type="text" id="fname" placeholder="First name" required />
+        <input type="text" id="lname" placeholder="Last name" />
+      </div>
+      <input type="email" id="email" placeholder="Work email address" required />
+      <div class="form-row">
+        <input type="text" id="company" placeholder="Company name" />
+        <select id="role">
+          <option value="" disabled selected>Your role</option>
+          <option>Project Manager</option>
+          <option>Senior PM</option>
+          <option>Director of Projects</option>
+          <option>VP of Operations</option>
+          <option>Founder / Owner</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <!-- MULTI-SELECT DROPDOWN -->
+      <div class="sp-dropdown-wrap" id="spWrap">
+        <div class="sp-trigger" id="spTrigger" onclick="toggleDropdown()">
+          <span id="spLabel">What's eating most of your time right now? (select all that apply)</span>
+          <span class="sp-arrow">▼</span>
+        </div>
+        <div class="sp-menu" id="spMenu">
+          <div class="sp-option" data-value="admin" onclick="toggleOption(this)">
+            <div class="sp-checkbox">✓</div>
+            📋 Drowning in admin and paperwork
+          </div>
+          <div class="sp-option" data-value="leads" onclick="toggleOption(this)">
+            <div class="sp-checkbox">✓</div>
+            📞 Missing leads from missed calls and slow follow-ups
+          </div>
+          <div class="sp-option" data-value="comms" onclick="toggleOption(this)">
+            <div class="sp-checkbox">✓</div>
+            💬 Spending too much time on client communication
+          </div>
+          <div class="sp-option" data-value="scheduling" onclick="toggleOption(this)">
+            <div class="sp-checkbox">✓</div>
+            🗓️ Scheduling and job tracking is a mess
+          </div>
+          <div class="sp-option" data-value="invoicing" onclick="toggleOption(this)">
+            <div class="sp-checkbox">✓</div>
+            💸 Chasing invoices and late payments
+          </div>
+          <div class="sp-option" data-value="documents" onclick="toggleOption(this)">
+            <div class="sp-checkbox">✓</div>
+            📂 Can never find the right document when I need it
+          </div>
+          <div class="sp-option" data-value="visibility" onclick="toggleOption(this)">
+            <div class="sp-checkbox">✓</div>
+            📊 No clear picture of how the business is actually performing
+          </div>
+        </div>
+      </div>
+
+      <button class="submit-btn" onclick="handleSubmit()">Apply for Early Partner Access &rarr;</button>
+      <p class="form-note">Founding partner spots are limited &mdash; we'll be in touch to set up a discovery call.</p>
+      <div class="success-msg" id="success">
+        <h3>You're on the list.</h3>
+        <p>We'll be in touch soon. In the meantime, reach out anytime at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0169646d6d6e41747165606875722f626e6c">[email&#160;protected]</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-strip">
+    <div class="stat fade-in">
+      <div class="stat-num">87<span>%</span></div>
+      <div class="stat-label">of trades business owners spend 10+ hours a week on admin that could be automated</div>
+    </div>
+    <div class="stat fade-in">
+      <div class="stat-num">$<span>1000</span>s</div>
+      <div class="stat-label">saved annually by replacing dated admin tools with purpose-built AI</div>
+    </div>
+    <div class="stat fade-in">
+      <div class="stat-num"><span>1st</span></div>
+      <div class="stat-label">founding partners work directly with us to shape what gets built and lock in special rates before our full launch</div>
+    </div>
+  </div>
+
+  <div class="quote-section fade-in">
+    <div class="quote-mark">"</div>
+    <blockquote>Businesses in the trades are built on skill, reputation, and relationships — not spreadsheets, missed calls, and chasing invoices. That's where we come in.</blockquote>
+    <div class="quote-author">— The Updaits Team</div>
+  </div>
+
+  <section class="bottom-cta fade-in">
+    <div class="section-label" style="text-align:center; margin-bottom: 1rem;">Founding partner program</div>
+    <h2 style="max-width: 520px;">Ready to <em>Updait</em> your business?</h2>
+    <p>Join our founding partner program. Tell us what's slowing you down — we'll figure out the rest together.</p>
+    <a href="#waitlist" class="cta-btn-large">Apply for Early Access &rarr;</a>
+  </section>
+
+  <footer>
+    <a href="#" class="logo">Updaits</a>
+    <p>&copy; 2025 Updaits. All rights reserved.</p>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) { el.target.classList.add('visible'); observer.unobserve(el.target); }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    function toggleDropdown() {
+      document.getElementById('spTrigger').classList.toggle('open');
+      document.getElementById('spMenu').classList.toggle('open');
+    }
+
+    document.addEventListener('click', function(e) {
+      const wrap = document.getElementById('spWrap');
+      if (wrap && !wrap.contains(e.target)) {
+        document.getElementById('spTrigger').classList.remove('open');
+        document.getElementById('spMenu').classList.remove('open');
+      }
+    });
+
+    function toggleOption(el) {
+      event.stopPropagation();
+      el.classList.toggle('selected');
+      const selected = [...document.querySelectorAll('.sp-option.selected')];
+      const label = document.getElementById('spLabel');
+      const trigger = document.getElementById('spTrigger');
+      if (selected.length === 0) {
+        label.textContent = 'What\'s eating most of your time right now? (select all that apply)';
+        trigger.classList.remove('has-selection');
+      } else {
+        label.textContent = selected.length === 1 ? '1 superpower selected' : selected.length + ' superpowers selected';
+        trigger.classList.add('has-selection');
+      }
+    }
+
+    function getSelectedPowers() {
+      return [...document.querySelectorAll('.sp-option.selected')].map(o => o.dataset.value);
+    }
+
+    function handleSubmit() {
+      const email = document.getElementById('email').value.trim();
+      const fname = document.getElementById('fname').value.trim();
+      if (!email || !fname) { alert('Please enter at least your first name and email.'); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
+
+      const powers = getSelectedPowers();
+
+      fetch('https://formspree.io/f/mykbeaoo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          'First name': fname,
+          'Last name': document.getElementById('lname').value.trim(),
+          'Email': email,
+          'Company': document.getElementById('company').value.trim(),
+          'Role': document.getElementById('role').value,
+          'Missing from setup': powers.join(', ')
+        })
+      })
+      .then(res => res.json().then(data => ({ ok: res.ok, data })))
+      .then(({ ok, data }) => {
+        if (ok) {
+          document.getElementById('waitlist').style.display = 'none';
+          document.getElementById('success').style.display = 'block';
+        } else {
+          console.error('Formspree error:', data);
+          alert('Error: ' + (data.error || JSON.stringify(data)));
+        }
+      })
+      .catch(err => {
+        console.error('Fetch error:', err);
+        alert('Network error: ' + err.message);
+      });
+    }
+  </script>
+</body>
+</html>
